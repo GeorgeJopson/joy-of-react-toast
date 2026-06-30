@@ -19,3 +19,8 @@ dist
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/.idea/.gitignore
+/.idea/joy-of-react-toast.iml
+/.idea/modules.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml

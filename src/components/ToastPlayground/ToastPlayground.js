@@ -3,6 +3,7 @@ import React from 'react';
 import Button from '../Button';
 
 import styles from './ToastPlayground.module.css';
+import Toast from "../Toast";
 
 const VARIANT_OPTIONS = ['notice', 'warning', 'success', 'error'];
 
@@ -12,6 +13,7 @@ function ToastPlayground() {
     setCurrentVariant
   ] = React.useState('notice');
   const [message, setMessage] = React.useState('');
+  const [toastOpen, setToastOpen] = React.useState(false);
 
   return (
     <div className={styles.wrapper}>
@@ -20,10 +22,12 @@ function ToastPlayground() {
         <h1>Toast Playground</h1>
       </header>
 
-      <form className={styles.controlsWrapper}
+        {toastOpen && <Toast variant={currentVariant} dismissToast={()=>setToastOpen(false)} >{message}</Toast>}
+
+        <form className={styles.controlsWrapper}
         onSubmit={(event) => {
           event.preventDefault();
-          console.log({currentVariant, message });
+          setToastOpen(true);
         }}
       >
         <div className={styles.row}>

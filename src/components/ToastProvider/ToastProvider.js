@@ -28,9 +28,13 @@ function ToastProvider({children}) {
     setCurrentToasts(newToasts);
   },[currentToasts]);
 
+  const dismissToasts = React.useCallback(()=>{
+    setCurrentToasts([]);
+  },[])
+
   const value = React.useMemo(()=>{
-    return {currentToasts:currentToasts, addToast:addToast, removeToast:removeToast};
-  },[currentToasts, addToast, removeToast])
+    return {currentToasts:currentToasts, addToast:addToast, removeToast:removeToast,dismissToasts:dismissToasts};
+  },[currentToasts, addToast, removeToast, dismissToasts]);
 
   return (
       <ToastContext value={value}>

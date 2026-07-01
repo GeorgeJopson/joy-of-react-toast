@@ -17,7 +17,7 @@ function ToastShelf({currentToasts, setCurrentToasts}) {
   return (
     <ol className={styles.wrapper}>
         {currentToasts.map((toast) => (
-            <li key={toast.id}>
+            <li key={toast.id} className={styles.toastWrapper}>
                 <Toast variant={toast.variant} dismissToast={()=>removeToast(toast.id)}> {toast.message} </Toast>
             </li>
         ))}

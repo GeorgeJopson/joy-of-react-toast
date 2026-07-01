@@ -17,7 +17,7 @@ function ToastPlayground() {
   const [message, setMessage] = React.useState('');
 
   console.log(React.use(ToastContext));
-  const {currentToasts, addToast, removeToast} = React.use(ToastContext);
+  const {addToast} = React.use(ToastContext);
 
   return (
     <div className={styles.wrapper}>
